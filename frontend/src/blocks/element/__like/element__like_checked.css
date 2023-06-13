@@ -1,0 +1,7 @@
+.element__like_checked {
+  background: url(../../../images/like_active.svg);
+}
+
+.element__like_checked:hover {
+  opacity: 0.6;
+}

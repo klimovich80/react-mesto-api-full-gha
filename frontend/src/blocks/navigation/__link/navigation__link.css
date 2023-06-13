@@ -1,0 +1,10 @@
+.navigation__link{
+  color:white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0 6px;
+}
+
+.navigation__link:hover{
+  opacity: .6;
+}

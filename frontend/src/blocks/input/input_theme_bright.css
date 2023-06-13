@@ -1,0 +1,6 @@
+.input_type_bright{
+  color: var(--text-color_dark);
+  border: none;
+  background-color: var(--background-color_bright);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}

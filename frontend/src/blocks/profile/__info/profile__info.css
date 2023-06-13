@@ -1,0 +1,19 @@
+.profile__info {
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: 148.76px 300px 49px;
+  grid-template-areas:
+    "avatar title button"
+    "avatar subtitle subtitle";
+}
+
+@media (max-width: 680px) {
+  .profile__info {
+    margin: 0 auto;
+    grid-template-columns: 224px 20px;
+    grid-template-areas:
+      "avatar avatar"
+      "title button"
+      "subtitle subtitle";
+  }
+}

@@ -1,0 +1,17 @@
+.element__like {
+  margin: 0;
+  padding: 0;
+  background: url(../../../images/like_inactive.svg) 0 0 no-repeat;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 22px;
+  aspect-ratio: 22/19;
+  z-index: 1;
+  border: none;
+}
+
+.element__like:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

@@ -1,0 +1,16 @@
+.App{
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  max-width: 880px;
+  min-width: 280px;
+  background-color: var(--background-color_dark);
+  color: var(--text-color_bright);
+  margin: 0 auto;
+  padding: 45px 0 60px;
+}
+
+@media (max-width: 680px) {
+  .App {
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+}

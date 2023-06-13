@@ -1,0 +1,6 @@
+.input_type_dark{
+  color: white;
+  border: none;
+  background-color: var(--background-color_dark);
+  border-bottom: 2px solid #CCCCCC
+}

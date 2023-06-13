@@ -1,0 +1,12 @@
+.header__logo {
+  max-width: 143px;
+  min-height: 33px;
+  aspect-ratio: 13/3;
+  background: url(../../../images/logo_bright.svg) 0 0 no-repeat;
+}
+
+@media (max-width: 680px) {
+  .header__logo {
+    scale: 0.725;
+  }
+}

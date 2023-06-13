@@ -1,0 +1,22 @@
+.close-button {
+  background: url(../../images/Close-Icon.svg) center no-repeat;
+  width: 32px;
+  aspect-ratio: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translate(40px, -40px);
+  border: none;
+}
+
+@media (max-width: 680px) {
+  .close-button {
+    scale: 0.625;
+    transform: translate(12px, -70px);
+  }
+}
+
+.close-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.popup__figure {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 34px);
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+@media (max-width: 680px) {
+  .popup__figure {
+    transform: translate(-50%, 88px);
+  }
+}
