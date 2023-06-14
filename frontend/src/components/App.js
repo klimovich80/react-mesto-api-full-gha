@@ -50,6 +50,7 @@ function App() {
     if (!token) {
       return;
     }
+    console.log(token);
     getUserInfo(token)
       .then(({ data }) => {
         setUserEmail(data.email);
@@ -59,7 +60,7 @@ function App() {
       .catch((err) => console.log(err));
   }, [token, navigate]);
 
-  useEffect(() => {}, [isLoading]);
+  useEffect(() => { }, [isLoading]);
 
   function handleEditAvatarClick() {
     setEditAvatarPopupOpen(true);
@@ -150,6 +151,7 @@ function App() {
   }
 
   function handleRegistration(data) {
+    console.log(data);
     register(data.password, data.email)
       .then((res) => {
         setRegisterSuccess(true);
@@ -167,6 +169,7 @@ function App() {
       .then((res) => {
         localStorage.setItem("token", res.token);
         setToken(res.token);
+        console.log(localStorage);
       })
       .catch((err) => console.log(err));
   }

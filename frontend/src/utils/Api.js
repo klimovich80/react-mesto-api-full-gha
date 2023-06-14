@@ -1,7 +1,7 @@
 class Api {
   constructor(config) {
     this._groupId = config.groupId;
-    this._baseUrl = `${config.baseUrl}/v1/${this._groupId}`;
+    this._baseUrl = `${config.baseUrl}`;
     this._headers = config.headers;
   }
 
@@ -70,7 +70,7 @@ class Api {
 
 export const api = new Api({
   groupId: "cohort-61",
-  baseUrl: "https://mesto.nomoreparties.co",
+  baseUrl: "http://localhost:3000",
   headers: {
     authorization: "ec0a3331-3b70-4ae3-9ae6-450b13b2e789",
     "Content-Type": "application/json",

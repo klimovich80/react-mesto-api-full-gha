@@ -1,4 +1,4 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = "http://localhost:3000";
 
 const sendRequest = (url, method, body, token) => {
   const options = {
@@ -33,5 +33,6 @@ export const login = (password, email) => {
 };
 
 export const getUserInfo = (token) => {
+  console.log('fronend getting user info');
   return sendRequest("/users/me", "GET", null, token);
 };
