@@ -50,9 +50,8 @@ function App() {
     if (!token) {
       return;
     }
-    console.log(token);
     getUserInfo(token)
-      .then(({ data }) => {
+      .then((data) => {
         setUserEmail(data.email);
         setIsLoggedIn(true);
         navigate("/", { replace: true });
@@ -169,7 +168,6 @@ function App() {
       .then((res) => {
         localStorage.setItem("token", res.token);
         setToken(res.token);
-        console.log(localStorage);
       })
       .catch((err) => console.log(err));
   }

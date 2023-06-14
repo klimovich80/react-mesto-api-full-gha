@@ -33,6 +33,5 @@ export const login = (password, email) => {
 };
 
 export const getUserInfo = (token) => {
-  console.log('fronend getting user info');
   return sendRequest("/users/me", "GET", null, token);
 };
