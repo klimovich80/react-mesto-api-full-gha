@@ -1,6 +1,7 @@
 const { PORT = 3000 } = process.env;
+const webaip = '158.160.58.14'
 const JWT_SECRET = '5fb40adfd86a6be9c48b0b04335b688f8a1ab09d525f7c6799c51e6572080291';
-const DB_ADDRESS = 'mongodb://localhost:27017/mestodb'; const SALT_ROUNDS = 10;
+const DB_ADDRESS = `mongodb://${webip}:27017/mestodb`; const SALT_ROUNDS = 10;
 module.exports = {
   PORT, JWT_SECRET, DB_ADDRESS, SALT_ROUNDS,
 };
