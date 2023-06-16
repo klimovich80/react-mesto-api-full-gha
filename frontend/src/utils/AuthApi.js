@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "https://api.equestrian.nomoredomains.rocks";
 
 const sendRequest = (url, method, body, token) => {
   const options = {
