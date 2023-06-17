@@ -151,7 +151,6 @@ function App() {
   }
 
   function handleRegistration(data) {
-    console.log(data);
     register(data.password, data.email)
       .then((res) => {
         setRegisterSuccess(true);

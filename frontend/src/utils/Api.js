@@ -1,3 +1,4 @@
+import BASE_URL from './config';
 class Api {
   constructor(config) {
     this._baseUrl = `${config.baseUrl}`;
@@ -68,7 +69,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: "https://api.equestrian.nomoredomains.rocks",
+  baseUrl: BASE_URL,
   headers: {
     authorization: `Bearer ${localStorage.getItem("token")}`,
     "Content-Type": "application/json",
