@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 const UnauthorizedError = require('../errors/UnauthorizedError');
 const { JWT_SECRET } = require('../config');
 const { errorHandler } = require('../controllers/errors');
-const { cli } = require('winston/lib/winston/config');
 
 // eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {
