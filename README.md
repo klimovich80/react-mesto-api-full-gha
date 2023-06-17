@@ -8,8 +8,8 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.58.14
+IP <158.160.58.14>
 
-[Frontend](https://equestrian.nomoredomains.rocks)
+Frontend <https://equestrian.nomoredomains.rocks>
 
-[Backend](https://api.equestrian.nomoredomains.rocks)
+Backend <https://api.equestrian.nomoredomains.rocks>
