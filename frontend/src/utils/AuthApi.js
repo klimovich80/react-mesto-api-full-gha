@@ -1,4 +1,3 @@
-// export const BASE_URL = "https://api.equestrian.nomoredomains.rocks";
 import BASE_URL from "./config";
 
 const sendRequest = (url, method, body, token) => {

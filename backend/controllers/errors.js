@@ -13,6 +13,7 @@ const UNAUTHORIZED_ERROR = 401;
 const NOT_OWNER_ERROR = 403;
 
 const errorHandler = (err, next) => {
+  console.log(err);
   if (err.code === MONGO_DUPLICATE_ERROR) {
     next(new DuplicateError('этот email уже используется, пожалуйста, выберите другой'));
   } else if (err instanceof Error.CastError) {
