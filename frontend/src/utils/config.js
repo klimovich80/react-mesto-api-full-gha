@@ -1,3 +1,3 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://api.equestrian.nomoredomains.rocks";
 
 export default BASE_URL;
