@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 const express = require('express');
 const { connect } = require('mongoose');
 const { errors } = require('celebrate');

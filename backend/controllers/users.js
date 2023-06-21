@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { Error } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
