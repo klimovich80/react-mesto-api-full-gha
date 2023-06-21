@@ -1,12 +1,11 @@
 require('dotenv').config();
 
-const { NODE_ENV, JWT_SECRET } = process.env;
 const { Error } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/user');
 const { errorHandler, OK_STATUS, CREATED_STATUS } = require('./errors');
-const { SALT_ROUNDS } = require('../config');
+const { SALT_ROUNDS, jwtSecretCheck } = require('../config');
 
 const getUsers = (req, res, next) => {
   userModel.find({})
@@ -75,7 +74,7 @@ const login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        NODE_ENV === 'production' ? JWT_SECRET : '',
+        jwtSecretCheck(),
         { expiresIn: '7d' },
       );
       res.send({ token });
