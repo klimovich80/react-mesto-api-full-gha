@@ -1,11 +1,10 @@
+const { NODE_ENV, JWT_SECRET } = process.env;
 const { Error } = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/user');
 const { errorHandler, OK_STATUS, CREATED_STATUS } = require('./errors');
 const { SALT_ROUNDS } = require('../config');
-
-const { NODE_ENV, JWT_SECRET } = process.env;
 
 const getUsers = (req, res, next) => {
   userModel.find({})
@@ -70,7 +69,6 @@ const updateAvatar = (req, res, next) => {
 const login = (req, res, next) => {
   const { email, password } = req.body;
 
-  // TODO FIX NODE ENV
   return userModel.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign(
