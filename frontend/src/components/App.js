@@ -54,6 +54,7 @@ function App() {
       .then((data) => {
         setUserEmail(data.email);
         setIsLoggedIn(true);
+        setCurrentUser(data)
         navigate("/", { replace: true });
       })
       .catch((err) => console.log(err));
@@ -169,7 +170,7 @@ function App() {
         localStorage.setItem("token", res.token);
         setToken(res.token);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
   }
 
   function handleSignout(e) {
@@ -178,6 +179,7 @@ function App() {
     setIsLoggedIn(false);
     setUserEmail("");
     localStorage.removeItem("token");
+    setCurrentUser({});
     navigate("/sign-in", { replace: true });
   }
 

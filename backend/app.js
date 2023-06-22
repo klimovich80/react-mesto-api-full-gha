@@ -21,11 +21,11 @@ app.use(requestLogger);
 
 app.use(router);
 
+app.use(() => { throw new DocumentNotFoundError('страница не найдена'); });
+
 app.use(errorLogger);
 
 app.use(errors());
-
-app.use(() => { throw new DocumentNotFoundError('страница не найдена'); });
 
 app.use(errorHandler);
 
