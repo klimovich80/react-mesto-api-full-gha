@@ -41,7 +41,7 @@ function Main({
       </section>
       <section className="elements">
         <ul className="elements__items">
-          {cards?.map((card) => (
+          {cards.map((card) => (
             <Card
               onCardDelete={onCardDelete}
               onCardClick={onCardClick}

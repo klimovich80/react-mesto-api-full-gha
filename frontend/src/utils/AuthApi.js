@@ -35,3 +35,7 @@ export const login = (password, email) => {
 export const getUserInfo = (token) => {
   return sendRequest("/users/me", "GET", null, token);
 };
+// TODO check if it is neccesary
+export const getCards = (token) => {
+  return sendRequest("/cards", "GET", null, token);
+}

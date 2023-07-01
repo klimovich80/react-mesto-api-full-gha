@@ -1,13 +1,18 @@
 import BASE_URL from './config';
 class Api {
   constructor(config) {
+    console.log('calling api')
     this._baseUrl = `${config.baseUrl}`;
     this._headers = config.headers;
+    console.log(this._headers);
   }
 
-  _request(url, method, body) {
+  _request(url, token, method, body) {
     const options = {
-      headers: this._headers,
+      headers: {
+        authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      }
     };
 
     if (method) {
@@ -28,41 +33,41 @@ class Api {
   }
 
   //Cards methods
-  getInitialCards() {
-    return this._request(`/cards`);
+  getInitialCards(token) {
+    return this._request(`/cards`, token);
   }
 
-  postNewCard(name, link) {
-    return this._request(`/cards`, "POST", { name, link });
+  postNewCard(name, link, token) {
+    return this._request(`/cards`, token, "POST", { name, link });
   }
 
-  deleteLike(id) {
-    return this._request(`/cards/${id}/likes`, "DELETE");
+  deleteLike(id, token) {
+    return this._request(`/cards/${id}/likes`, token, "DELETE");
   }
 
-  addLike(id) {
-    return this._request(`/cards/${id}/likes`, "PUT");
+  addLike(id, token) {
+    return this._request(`/cards/${id}/likes`, token, "PUT");
   }
 
-  changeLikeCardStatus(id, isLiked) {
-    return isLiked ? this.addLike(id) : this.deleteLike(id);
+  setLikeStatus(id, isLiked, token) {
+    return isLiked ? this.deleteLike(id, token) : this.addLike(id, token);
   }
 
-  deleteCard(cardId) {
-    return this._request(`/cards/${cardId}`, "DELETE");
+  deleteCard(cardId, token) {
+    return this._request(`/cards/${cardId}`, token, "DELETE");
   }
 
   //profile methods
-  getProfileInfo() {
-    return this._request(`/users/me`);
+  getProfileInfo(token) {
+    return this._request(`/users/me`, token);
   }
 
-  editProfileInfo(name, about) {
-    return this._request(`/users/me`, "PATCH", { name, about });
+  editProfileInfo(name, about, token) {
+    return this._request(`/users/me`, token, "PATCH", { name, about });
   }
 
-  editProfileAvatar(url) {
-    return this._request(`/users/me/avatar`, "PATCH", {
+  editProfileAvatar(url, token) {
+    return this._request(`/users/me/avatar`, token, "PATCH", {
       avatar: url,
     });
   }
@@ -70,8 +75,4 @@ class Api {
 
 export const api = new Api({
   baseUrl: BASE_URL,
-  headers: {
-    authorization: `Bearer ${localStorage.getItem("token")}`,
-    "Content-Type": "application/json",
-  },
 });
